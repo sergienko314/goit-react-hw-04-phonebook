@@ -57,6 +57,7 @@ const ContactForm = ({ checkContacts, addContact }) => {
                 </label>
                 <label htmlFor=""> Number:
                     <input
+                        
                         name="number"
                         value={number}
                         type="text"
