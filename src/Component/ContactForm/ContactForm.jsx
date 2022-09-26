@@ -7,15 +7,15 @@ import { v4 as uuidv4 } from 'uuid';
 const ContactForm = ({ checkContacts, addContact }) => {
    
     const [name, setName] = useState(
-        JSON.parse(localStorage.getItem('name') || "")
+        localStorage.getItem('name') || ""
             )
     const [number, setNumber] = useState(
-        JSON.parse(localStorage.getItem('number') || "")
+        localStorage.getItem('number') || ""
     )
 
 
-    useEffect(() => localStorage.setItem('name', JSON.stringify(name)), [name]);
-    useEffect(() => localStorage.setItem('number', JSON.stringify(number)), [number]);
+    useEffect(() => localStorage.setItem('name', name), [name]);
+    useEffect(() => localStorage.setItem('number', number), [number]);
     
    
 
@@ -74,6 +74,7 @@ const ContactForm = ({ checkContacts, addContact }) => {
 export default ContactForm;
 
 ContactForm.propTypes = {
-    addContact: PropTypes.func.isRequired
+    addContact: PropTypes.func.isRequired,
+    checkContacts: PropTypes.array.isRequired
 }
 
